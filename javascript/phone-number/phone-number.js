@@ -27,7 +27,7 @@ module.exports = function PhoneNumber (phone) {
     },
 
     toString: function () {
-      return clean.replace(/(...)/, '($&) ')
+      return clean.replace(/.../, '($&) ')
         .replace(/ .../, '$&-');
     }
   }
