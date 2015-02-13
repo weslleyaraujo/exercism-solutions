@@ -1,20 +1,26 @@
 clojure
-coffeescript
 cpp
-csharp
 elixir
-erlang
 fsharp
-go
 haskell
+javascript
 lua
-objective-c
 ocaml
+plsql
+ruby
+swift
+coffeescript
+csharp
+erlang
+go
+java
+lisp
+objectiv
+c
 perl5
 python
-ruby
 scala
-swift
+objective-c
 
 # Created by https://www.gitignore.io
 
