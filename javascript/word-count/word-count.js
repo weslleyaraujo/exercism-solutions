@@ -1,8 +1,8 @@
 function words (input) {
   var report = {};
-  input = input.replace(/[\n\t]/g, ' ');
-  input = input.replace(/  /g, ' ');
   input = input || '';
+  input = input.replace(/[\n\t]/g, ' ').replace(/  /g, ' ');
+
   input.split(' ').forEach(function (word) {
     if (report.hasOwnProperty(word)) {
       report[word] = report[word] + 1;
