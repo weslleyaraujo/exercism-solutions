@@ -1,6 +1,6 @@
 # Exercism
 
-That's my solutions for the [exercism.io](http://exercism.io/) challegens :)
+That's my solutions for the [exercism.io](http://exercism.io/) challenges :)
 
 ## Available challenges
 
