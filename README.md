@@ -19,3 +19,9 @@ That's my solutions for the [exercism.io](http://exercism.io/) challenges :)
 Beerware
 
 **Born to be wild**
+
+## Setup symlink
+
+```
+ln -s /path/to/repo/exercism-solutions/javascript/ ~/exercism/
+```
