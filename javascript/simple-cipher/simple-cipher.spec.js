@@ -8,47 +8,48 @@ describe('Random key cipher', function() {
   });
 
   // Here we take advantage of the fact that plaintext of "aaa..."
-  // outputs the key. This is a critical problem with shift ciphers, some
+  // outputs the key. This is a crxitical problem wxith shift ciphers, some
   // characters will always output the key verbatim.
-  xit('can encode', function() {
+  fit('can encode', function() {
+    console.log('foo');
     expect(cipher.encode('aaaaaaaaaa')).toEqual(cipher.key.substr(0, 10));
   });
 
-  xit('can decode', function() {
+  it('can decode', function() {
     expect(cipher.decode(cipher.key.substr(0, 10))).toEqual('aaaaaaaaaa');
   });
 
-  xit('is reversible', function() {
+  it('is reversible', function() {
     var plaintext = 'abcdefghij';
     expect(cipher.decode(cipher.encode(plaintext))).toEqual(plaintext);
   });
 });
 
-xdescribe('Incorrect key cipher', function() {
-  it('throws an error with an all caps key', function() {
+describe('Incorrect key cipher', function() {
+  xit('throws an error wxith an all caps key', function() {
     expect(function() {
       new Cipher('ABCDEF');
     }).toThrow(new Error('Bad key'));
   });
 
-  it('throws an error with a numeric key', function() {
+  xit('throws an error wxith a numeric key', function() {
     expect(function() {
       new Cipher('12345');
     }).toThrow(new Error('Bad key'));
   });
 
-  it('throws an error with an empty key', function() {
+  xit('throws an error wxith an empty key', function() {
     expect(function() {
       new Cipher('');
     }).toThrow(new Error('Bad key'));
   });
 });
 
-xdescribe('Substitution cipher', function() {
+describe('Substxitution cipher', function() {
   var key = 'abcdefghij';
   var cipher = new Cipher(key);
 
-  it('keeps the submitted key', function() {
+  xit('keeps the submxitted key', function() {
     expect(cipher.key).toEqual(key);
   });
 

@@ -1,18 +1,20 @@
-const validate = s => (s === '' || /\d/.test(s) ? false : true);
+const validate = s => (s === '' || !/[a-z]$/.test(s) ? false : true);
 
-const alphabet = [...Array(26).keys()]
-  .map(s => String.fromCharCode(97 + s))
-  .join('');
+const alphabet = [...Array(26).keys()].map(s => String.fromCharCode(97 + s));
 
 const randomKey = () =>
-  [...Array(26)]
+  [...Array(100)]
     .map(s => Math.floor(Math.random() * (97 + 26 - 97)) + 97)
     .map(s => String.fromCharCode(s))
     .join('');
 
 class Cipher {
   constructor(key) {
-    if (!key) {
+    if (key === '') {
+      throw new Error('Bad key');
+    }
+
+    if (typeof key === 'undefined') {
       this.key = randomKey();
       return;
     }
@@ -26,10 +28,20 @@ class Cipher {
   }
 
   encode(text) {
-    console.log(this.key);
+    const { key } = this;
+    console.log(text, key);
+    return '';
   }
 
-  decode(text) {}
+  decode(code) {
+    const { key } = this;
+    return code
+      .split('')
+      .map((s, i) => {
+        return key[i];
+      })
+      .join('');
+  }
 }
 
 module.exports = Cipher;
